@@ -5,8 +5,7 @@ export function getRandomPrompt(prompt) {
     const randomIndex = Math.floor(Math.random() * surpriseMePrompts.length);
     const randomPrompt = surpriseMePrompts[randomIndex];
 
-    // just to prevent getting the same prompt multiple times in a row
-    // although it's quite unlikely
+    // just to prevent getting the same prompt multiple times in a row although it's quite unlikely
     if (randomPrompt === prompt) return getRandomPrompt(prompt);
 
     return randomPrompt;
