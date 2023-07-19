@@ -4,7 +4,7 @@ import Card from '../components/Card';
 
 
 const RenderCards = ({data, title}) => {
-    if (data?.length > 0) {
+    if (data && data.length > 0) {
         return data.map((post) => <Card key={post._id} {...post} />)
     } 
     return (
@@ -55,6 +55,7 @@ const Home = () => {
 
     setSearchTimeout(
         setTimeout(() => {
+            //lowercase both for more accurate filter
             const searchResult = allPosts.filter((post) => post.name.toLowerCase().includes(searchText.toLowerCase())
                 || post.prompt.toLowerCase().includes(searchText.toLowerCase()));
 
